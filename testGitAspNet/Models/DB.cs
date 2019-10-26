@@ -10,6 +10,7 @@ namespace testGitAspNet.Models
         public DB()
             : base("name=DB")
         {
+            Database.SetInitializer<DB>(new CreateDatabaseIfNotExists<DB>());
         }
 
         public virtual DbSet<Commune> Communes { get; set; }
